@@ -47,8 +47,7 @@ export default function Home() {
       <div className="absolute right-10 top-1/2 transform -translate-y-1/2 w-full max-w-md text-right">
         <h1 className="text-5xl font-bold tracking-wide">codeHive</h1>
         <p className="mt-4 text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus imperdiet sed id elementum. 
-          Quam vel aliquam sit vulputate.
+        Redefining how developers discover, learn, and collaborate. Our AI-powered platform curates open-source projects tailored to your skills and interests, letting you swipe through them effortlessly. Need help? A developer's dream 
         </p>
         <button
           onClick={() => navigate("/Dash")}
@@ -58,18 +57,26 @@ export default function Home() {
         </button>
       </div>
 
-      {/* Bottom Text Sections */}
-      <div className="absolute bottom-8 w-full flex justify-around px-10 z-10">
-        <p className="text-sm border-l-2 pl-3 border-white/60">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-        <p className="text-sm border-l-2 pl-3 border-white/60">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-        <p className="text-sm border-l-2 pl-3 border-white/60">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-      </div>
+     {/* Bottom Scrolling Text */}
+<div className="absolute bottom-8 w-full overflow-hidden z-10">
+  <div className="whitespace-nowrap animate-marquee text-2xl text-white/80">
+    Unleash Your Potential | Innovate. Collaborate. Succeed. | Empowering Ideas, Elevating Futures
+  </div>
+</div>
+
+<style>
+  {`
+    @keyframes marquee {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+    .animate-marquee {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 10s linear infinite;
+    }
+  `}
+</style>
     </div>
   );
 }
